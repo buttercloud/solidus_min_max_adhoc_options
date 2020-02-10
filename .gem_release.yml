@@ -1,0 +1,5 @@
+bump:
+  recurse: false
+  file: 'lib/solidus_min_max_adhoc_options/version.rb'
+  message: Bump SolidusMinMaxAdhocOptions to %{version}
+  branch: true
