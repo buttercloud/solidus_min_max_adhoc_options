@@ -1,7 +1,7 @@
 SolidusMinMaxAdhocOptions
 =========================
 
-Introduction goes here.
+Configure min, max, and fixed number of required AdHoc option values.
 
 Installation
 ------------
@@ -12,7 +12,7 @@ Add solidus_min_max_adhoc_options to your Gemfile:
 gem 'solidus_min_max_adhoc_options'
 ```
 
-Run migrations
+Run migrations:
 
 ```shell
 bundle exec rails db:migrate
