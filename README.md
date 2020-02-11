@@ -12,11 +12,10 @@ Add solidus_min_max_adhoc_options to your Gemfile:
 gem 'solidus_min_max_adhoc_options'
 ```
 
-Bundle your dependencies and run the installation generator:
+Run migrations
 
 ```shell
-bundle
-bundle exec rails g solidus_min_max_adhoc_options:install
+bundle exec rails db:migrate
 ```
 
 Testing
