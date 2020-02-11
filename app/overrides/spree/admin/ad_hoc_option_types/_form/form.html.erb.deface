@@ -1,0 +1,12 @@
+<!-- insert_bottom 'div[data-hook="admin_ad_hoc_option_types_form_fields"]' -->
+
+<div class="col-md-3">
+  <%= f.field_container :rule, class: ['form-group'] do %>
+    <h5> Would you like to specify any rules for this option ? </h5>
+    <%= f.label :rule_type %>
+    <%= f.select :rule_type, AD_HOC_OPTION_TYPE_RULE_TYPES, { include_blank: true }, class: 'form-control' %>
+
+    <%= f.label :rule_value %>
+    <%= f.number_field :rule_value, class: 'form-control' %>
+  <% end %>
+</div>
