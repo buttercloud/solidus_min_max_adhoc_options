@@ -23,17 +23,19 @@ Spree::AdHocOptionType.class_eval do
   end
 
   def valid_min_max?(ah_ovs)
-    case rule_type
-    when "min"
-      ah_ovs.count >= rule_value
-    when "max"
-      ah_ovs.count <= rule_value
-    when "exact"
-      ah_ovs.count == rule_value
-    when nil
-      true
+    if rule_type.present?
+      case rule_type
+      when "min"
+        ah_ovs.count >= rule_value
+      when "max"
+        ah_ovs.count <= rule_value
+      when "exact"
+        ah_ovs.count == rule_value
+      else
+        false
+      end
     else
-      false
-    end 
+      true
+    end
   end
 end
