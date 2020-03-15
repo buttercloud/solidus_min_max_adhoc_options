@@ -4,7 +4,7 @@ Spree.Views.Stock.EditStockItemRow = Backbone.View.extend({
   initialize: function(options) {
     this.stockLocationName = options.stockLocationName;
     this.negative = this.model.attributes.count_on_hand < 0;
-    this.availability = this.model.attributes.flags & 1;
+    this.not_available = this.model.attributes.flags & 1;
     this.previousAttributes = _.clone(this.model.attributes);
     this.listenTo(this.model, 'sync', this.onSuccess);
     this.render();
@@ -16,7 +16,7 @@ Spree.Views.Stock.EditStockItemRow = Backbone.View.extend({
     "click .cancel": "onCancel",
     'input [name="count_on_hand"]': "countOnHandChanged",
     'input [name="backorderable"]': "backorderableChanged",
-    'input [name="availability"]': "availability"
+    'input [name="not_available"]': "not_available"
   },
 
   template: HandlebarsTemplates['stock_items/stock_location_stock_item'],
@@ -26,7 +26,7 @@ Spree.Views.Stock.EditStockItemRow = Backbone.View.extend({
       stockLocationName: this.stockLocationName,
       editing: this.editing,
       negative: this.negative,
-      availability: this.availability
+      not_available: this.not_available
     };
     _.extend(renderAttr, this.model.attributes);
     this.$el.attr("data-variant-id", this.model.get('variant_id'));
@@ -93,12 +93,12 @@ Spree.Views.Stock.EditStockItemRow = Backbone.View.extend({
     ev.preventDefault();
     var backorderable = this.$('[name=backorderable]').prop("checked");
     var countOnHand = parseInt(this.$("input[name='count_on_hand']").val(), 10);
-    var availability = this.$('[name=availability]').prop("checked");
+    var not_available = this.$('[name=not_available]').prop("checked");
 
     this.model.set({
       count_on_hand: countOnHand,
       backorderable: backorderable,
-      availability: availability
+      not_available: not_available
     });
     var options = {
       success: function() {

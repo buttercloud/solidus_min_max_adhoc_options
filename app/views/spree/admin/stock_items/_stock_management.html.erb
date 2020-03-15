@@ -20,7 +20,7 @@
       <th><%= Spree::StockLocation.model_name.human %></th>
       <th class="align-center"><%= t('spree.backorderable_header') %></th>
       <th class="align-center"><%= t('spree.count_on_hand') %></th>
-      <th class="align-center"><%= t('spree.availability') %></th>
+      <th class="align-center"><%= t('spree.not_available') %></th>
       <th><%= t('spree.modify_stock_count') %></th>
       <th class="actions"></th>
     </tr>
@@ -93,7 +93,7 @@
                     <%= number_field_tag :count_on_hand, "", class: 'fullwidth', id: "variant-count-on-hand-#{variant.id}" %>
                   </td>
                   <td class="align-center">
-                    <%= check_box_tag :availability, 'availability', false, id: "variant-availability-#{variant.id}" %>
+                    <%= check_box_tag :not_available, 'not_available', false, id: "variant-not_available-#{variant.id}" %>
                   </td>
                   <td></td>
                   <td class="actions">

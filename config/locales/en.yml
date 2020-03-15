@@ -4,4 +4,4 @@
 en:
   hello: Hello world
   spree:
-    availability: Available?
+    not_available: Not Available?
