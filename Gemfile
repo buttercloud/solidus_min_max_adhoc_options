@@ -7,6 +7,7 @@ gem 'solidus', github: 'solidusio/solidus', branch: branch
 # Provides basic authentication functionality for testing parts of your engine
 gem 'solidus_auth_devise'
 gem 'solidus_flexi_variants', '~> 1.0.1', github: "buttercloud/solidus_flexi_variants"
+gem 'flag_shih_tzu'
 
 # This is needed to avoid incompatibilities between this extension and
 # old versions of solidus (< 2.5). This can be reverted when Solidus 2.4

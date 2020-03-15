@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'solidus_core' # Set Solidus version
+  s.add_dependency 'solidus_backend'
   # s.add_dependency 'solidus_flexi_variants'
 
   s.add_development_dependency 'capybara'

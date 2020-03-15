@@ -20,6 +20,10 @@ module SolidusMinMaxAdhocOptions
       end
     end
 
+    initializer "spree.permit_stock_item_flags" do |c|
+      Spree::PermittedAttributes.stock_item_attributes.push(:availability)
+    end
+
     config.to_prepare(&method(:activate).to_proc)
   end
 end
