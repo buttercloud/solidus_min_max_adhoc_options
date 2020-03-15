@@ -1,6 +1,6 @@
 Spree::Stock::Quantifier.class_eval do
-  def availablility
-    stock_items.any?(&:availablility)
+  def availablility?
+    !stock_items.any?(&:not_available?)
   end
 
   def can_supply?(required)
