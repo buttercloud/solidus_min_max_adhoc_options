@@ -1,0 +1,3 @@
+<!-- insert_top 'div[data-hook="admin_product_form_right"]' -->
+<%= f.check_box :auto_select_flag %>
+<%= f.label :auto_select_flag %>
